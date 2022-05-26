@@ -9,7 +9,7 @@ app.use(cors());
 app.use(formidable());
 
 
-mongoose.connect(prcess.env.MONGODB_CONNECT);
+mongoose.connect(process.env.MONGODB_CONNECT);
 const userRoutes = require("./routes/user");
 app.use(userRoutes);
 
