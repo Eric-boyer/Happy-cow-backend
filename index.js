@@ -1,19 +1,16 @@
+require("dotenv").config();
 const express = require("express");
 const formidable = require("express-formidable");
 const cors = require("cors");
 const mongoose = require("mongoose");
-require ("dotenv").config();
 
 const app = express();
 app.use(cors());
 app.use(formidable());
-
-
-mongoose.connect(process.env.MONGODB_CONNECT);
+console.log(process.env.MONGODB_URI);
+ mongoose.connect(process.env.MONGODB_URI);
 const userRoutes = require("./routes/user");
 app.use(userRoutes);
-
-
 
 app.get("/", (req, res) => {
   res.json("welcom to my projet");

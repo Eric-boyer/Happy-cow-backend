@@ -68,8 +68,8 @@ router.post("/user/login", async (req, res) => {
       } else {
         res.status(400).json({ message: "unauthorized" });
       }
-    }else{
-        res.status(400).json({message:"user not found"})
+    } else {
+      res.status(400).json({ message: "user not found" });
     }
   } catch (error) {
     res.status(400).json({ message: error.message });
